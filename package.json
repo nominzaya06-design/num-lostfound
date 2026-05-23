@@ -4,21 +4,21 @@
   "description": "NUM Lost and Found SPA with Express and PostgreSQL backend",
   "type": "module",
   "scripts": {
-    "start": "npm run build:react && node backend/src/server.js",
-    "dev": "npm run build:react && node backend/src/server.js",
-    "build:react": "node backend/scripts/build-react-widget.js",
-    "db:setup": "node backend/scripts/setup-db.js",
-    "db:seed": "node backend/scripts/seed-db.js"
+  "build": "node backend/scripts/build-react-widget.js",
+  "start": "node backend/src/server.js",
+  "db:setup": "node backend/scripts/setup-db.js",
+  "db:seed": "node backend/scripts/seed-db.js"
   },
   "dependencies": {
-    "cookie-parser": "^1.4.6",
-    "dotenv": "^16.4.7",
-    "express": "^4.21.2",
-    "express-rate-limit": "^7.5.0",
-    "helmet": "^8.0.0",
-    "pg": "^8.13.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+  "cookie-parser": "^1.4.7",
+  "dotenv": "^16.4.7",
+  "esbuild": "^0.28.0",
+  "express": "^4.21.2",
+  "express-rate-limit": "^7.5.0",
+  "helmet": "^8.0.0",
+  "pg": "^8.13.1",
+  "react": "^18.3.1",
+  "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "esbuild": "^0.28.0"
