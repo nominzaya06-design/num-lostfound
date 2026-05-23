@@ -1,0 +1,566 @@
+
+/* 
+Global css
+*/
+:root{
+    --color-blue-0: hsl(223, 66%, 74%);
+    --color-blue-1: hsl(222, 82%, 62%);
+    --color-blue-2: hsl(223, 60%, 36%);
+    --color-blue-3: hsl(223, 55%, 93%);
+ 
+
+
+    --color-white-0: hsl(0, 0%, 100%);
+    --color-white-1: hsl(0, 0%, 97%);
+    --color-white-2: hsl(0, 0%, 90%);
+    --color-white-3: hsl(0, 0%, 85%);
+
+    --color-black-1: hsl(0, 0%, 12%);
+    --color-black-2: hsl(0, 0%, 28%);
+    --color-black-3: hsl(0, 0%, 48%);
+
+    --color-line: hsl(0, 0%, 86%);
+    --color-shadow: hsla(0, 0%, 0%, 0.08);
+    --color-shadow-blue: hsla(242, 93%, 58%, 0.299);
+    --color-shadow-blue-hover: hsla(242, 93%, 58%, 0.978);
+
+    --space-0: 0rem;
+    --space-1: 0.3rem;
+    --space-2: 0.6rem;
+    --space-3: 0.9rem;
+    --space-4: 1.2rem;
+    --space-5: 1.8rem;
+    --space-6: 3.5rem;
+ --space-7:2.5rem;
+    --radius-1: 0.55rem;
+    --radius-2: 0.9rem;
+    --radius-3: 2rem;
+     --transition: 0.3s ease;
+    --font-size-1: 0.5rem;
+    --font-size-1_5: 0.65rem;
+    --font-size-2: 0.75rem;
+    --font-size-3: 1rem;
+    --font-size-3_5: 1.15rem;
+    --font-size-4: 1.25rem;
+    --font-size-5: 1.5rem;
+
+    --font-size-6: 1.75rem;
+    --font-size-7: 2rem;
+    --font-size-7_5: 2.15rem;
+    --font-size-8: 2.5rem;
+    --font-size-8_5: 2.8rem;
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: var(--color-white-1);
+    color: var(--color-black-1);
+}
+
+a {
+    text-decoration: none;
+}
+
+/*-- Animation Hero дээрх --*/
+.hero-badge {
+    animation: fadeUp 0.7s ease;
+}
+
+.hero h1 {
+    animation: fadeUp 0.8s ease;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(0.8rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*-- NAVBAR Дээд navigation хэсэг --*/
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0.5rem 5%;
+    background-color: var(--color-white-0);
+    border-bottom: 1px solid var(--color-line);
+    gap: var(--space-3);
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.logo {
+    width: 2rem;
+    height: auto;
+}
+
+.nav-logo-text strong {
+    display: block;
+    font-size: var(--font-size-3_5);
+    color: var(--color-blue-2);
+}
+
+.nav-logo-text small {
+    font-size: var(--font-size-1_5);
+    color: var(--color-black-3)
+}
+
+.nav-center {
+    display: flex;
+    gap: var(--space-2);
+}
+
+.nav-center a {
+    padding: 0.6rem 0.85rem;
+    border-radius: var(--radius-1);
+    font-size: var(--font-size-2);
+    color: var(--color-black-2);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-center a.active {
+    background-color: var(--color-blue-3);
+    color: var(--color-blue-2);
+    font-weight: bold;
+}
+
+.nav-center a:hover {
+    background-color: var(--color-blue-3);
+    color: var(--color-blue-2);
+}
+
+.nav-right{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.hero-search {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.hero-search input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+
+.post-btn,
+.login-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0.8rem;
+    height: 2.15rem;
+    border-radius: var(--radius-1);
+    font-size: var(--font-size-2);
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.post-btn {
+    background-color: var(--color-blue-1);
+    color: var(--color-white-0);
+}
+
+.login-btn {
+    border: 1px solid var(--color-line);
+    background-color: var(--color-white-0);
+    color: var(--color-black-2);
+}
+
+.login-btn:hover {
+    background-color: var(--color-blue-3);
+    color: var(--color-blue-2);
+}
+
+
+.profile-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 2.2rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    border: 1.5px solid var(--color-line);
+    border-radius: 50%;
+    background-color: var(--color-blue-3);
+    color: var(--color-blue-2);
+    font-size: var(--font-size-2);
+}
+
+/* HERO SECTION */
+
+.hero {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top:var(--space-6);
+    text-align: center;
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 0.45rem 0.9rem;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-3);
+    background-color: var(--color-blue-3);
+    color: var(--color-blue-2);
+    font-size: var(--font-size-1_5);
+    font-weight: bold;
+    letter-spacing: 0.03rem;
+}
+
+.hero h1 {
+    margin-top: var(--space-4);
+    font-size: var(--font-size-8_5);
+    font-weight: bold;
+    letter-spacing: -1.5px;
+}
+
+.hero h1 span {
+    display: block;
+}
+
+
+.hero-blue {
+    color: var(--color-blue-2);
+}
+
+.hero-search {
+    max-width: 50rem;
+    margin: var(--space-5) auto 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-3);
+}
+
+.hero-search button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: var(--radius-3);
+    background-color: var(--color-blue-2);
+    color: var(--color-white-0);
+    font-weight: bold;
+}
+
+
+.hero-search input,
+.hero-search input::placeholder {
+    font-size: 0.86rem;
+}
+
+.hero-search button {
+    font-size: 0.82rem;
+}
+
+/* BOTTOM NAV */
+.bottom-nav {
+    display: none ;
+}
+
+
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+      .card {
+    max-width: 100%;
+  }
+    .nav {
+        padding: 0.9rem 4%;
+    }
+
+    .nav-center,
+    .nav-right {
+        display: none;
+    }
+
+    .nav-logo-text strong {
+        font-size: var(--font-size-3);
+    }
+
+    .nav-logo-text small {
+        font-size: var(--font-size-1_5);
+    }
+
+    .hero {
+        width: 80%;
+        padding-top: 2rem;
+    }
+
+    .hero h1 {
+        font-size: var(--font-size-7_5);
+    }
+
+    .bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 0.7rem 0;
+    background-color: var(--color-white-0);
+    border-top: 1px solid var(--color-line);
+
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    }   
+
+    .bottom-nav a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.2rem;
+        color: var(--color-black-3);
+        font-size: var(--font-size-2);
+    }
+
+    .bottom-nav a.mobile-active {
+    color: var(--color-blue-2);
+    font-weight: bold;
+    }
+
+    .bottom-nav svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    }
+
+    body {
+    padding-bottom: 4.5rem;
+    }
+}
+/* SHARED UTILITIES Homepage-оос бусад хуудсанд ашиглах нийтлэг style */
+* {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+/* ХУУДАСНЫ ӨРГӨН Нийтлэг content width */
+.site-main,
+.page-width,
+.profile-page,
+.auth-page,
+.admin-page {
+  width: min(90%, 1200px);
+  margin-inline: auto;
+}
+
+.site-main,
+.profile-page,
+.auth-page,
+.admin-page {
+  padding: 1.8rem 0 5rem;
+  animation: pageFade 0.28s ease;
+}
+
+@keyframes pageFade {
+  from {
+    opacity: 0;
+    transform: translateY(0.45rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ЦАГААН CARD Нийтлэг card surface */
+.surface {
+  background-color: var(--color-white-0);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-2);
+  box-shadow: 0 0.5rem 1.5rem var(--color-shadow);
+}
+
+/* FORM ELEMENT Input, select, textarea */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.8rem 0.95rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-1);
+  background-color: var(--color-white-0);
+  color: var(--color-black-2);
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-black-3);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--color-blue-1);
+}
+
+textarea {
+  min-height: 7rem;
+  resize: vertical;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 2.2rem;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--color-black-3) 50%),
+    linear-gradient(135deg, var(--color-black-3) 50%, transparent 50%);
+  background-position:
+    calc(100% - 1rem) calc(50% - 0.1rem),
+    calc(100% - 0.7rem) calc(50% - 0.1rem);
+  background-size: 0.35rem 0.35rem;
+  background-repeat: no-repeat;
+}
+
+
+/* BUTTONS Нийтлэг товчнууд */
+.btn-solid,
+.btn-outline,
+.btn-soft {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 2.65rem;
+  padding: 0 1rem;
+  border-radius: var(--radius-1);
+  font-size: 0.82rem;
+  font-weight: 700;
+  transition: var(--transition);
+}
+
+.btn-solid {
+  background-color: var(--color-blue-1);
+  color: var(--color-white-0);
+}
+
+.btn-solid:hover {
+  background-color: var(--color-blue-2);
+}
+
+.btn-outline {
+  border: 1px solid var(--color-blue-1);
+  color: var(--color-blue-1);
+  background-color: var(--color-white-0);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-blue-3);
+}
+
+.btn-soft {
+  border: 1px solid var(--color-line);
+  color: var(--color-black-3);
+  background-color: var(--color-white-1);
+}
+
+.btn-soft:hover {
+  border-color: var(--color-black-3);
+  color: var(--color-black-2);
+}
+
+/* STATUS BADGE Lost / Found төлөв */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.7rem;
+  border-radius: var(--radius-3);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.badge.found {
+  background-color: #e6f6ed;
+  color: #41b06e;
+}
+
+.badge.lost {
+  background-color: #fdeceb;
+  color: #e65c52;
+}
+
+@media (max-width: 768px) {
+  .site-main,
+  .profile-page,
+  .auth-page,
+  .admin-page {
+    padding-top: 1.2rem;
+  }
+
+}
+
+
+/* Navbar actions: top search removed, keep action buttons compact and close. */
+.nav-right .post-btn,
+.nav-right .login-btn {
+  min-width: 6.2rem;
+}
+
+@media (max-width: 720px) {
+  .nav {
+    padding-inline: 1rem;
+  }
+
+  .nav-right {
+    margin-left: auto;
+  }
+
+  .nav-right .post-btn {
+    min-width: auto;
+    padding-inline: 0.65rem;
+  }
+}

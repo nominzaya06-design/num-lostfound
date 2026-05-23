@@ -1,0 +1,449 @@
+/* HOME SECTION UTILITIES: Recent title, summary cards, container */
+.ri {
+  margin-bottom: var(--space-5);
+}
+
+.container {
+  width: min(90%, 1200px);
+  margin: 0 auto;
+  padding: var(--space-5) 0;
+}
+
+.recent-items-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.results-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.32rem 0.65rem;
+  border-radius: 999px;
+  background: #f3f4f6;
+  color: #4b5563;
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 160px));
+  gap: 0.65rem;
+  margin-bottom: 1rem;
+}
+
+.summary-card {
+  padding: 0.7rem 0.85rem;
+  background: var(--color-white-0);
+  border: 1px solid #e5e7eb;
+  border-radius: 0.85rem;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+.summary-card strong {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.2;
+}
+
+.summary-card span {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.62rem;
+  line-height: 1.25;
+  color: #6b7280;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: min(92%, 40rem);
+    padding-bottom: var(--space-4);
+  }
+
+  .recent-items-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .summary-grid {
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+  }
+}
+
+
+/* HOMEPAGE GRID: Recent Items дээр 4 card нэг эгнээнд багтах compact layout */
+.container > .item-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.container > .item-grid .item-card {
+  min-height: 25.5rem;
+}
+
+.container > .item-grid .item-card__media {
+  aspect-ratio: 4 / 2.65;
+}
+
+.container > .item-grid .item-card__body {
+  gap: 0.55rem;
+  padding: 0.78rem;
+}
+
+.container > .item-grid .item-card__text {
+  min-height: 2.55rem;
+  -webkit-line-clamp: 2;
+}
+
+.container > .item-grid .meta-list {
+  min-height: 2.25rem;
+}
+
+@media (max-width: 1100px) {
+  .container > .item-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 820px) {
+  .container > .item-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 540px) {
+  .container > .item-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .container > .item-grid .item-card {
+    min-height: auto;
+  }
+}
+
+/* HOMEPAGE CARD ALIGNMENT FIX
+   Recent Items card-уудыг нэг мөрөнд зэрэгцсэн, ижил image/body хэмжээтэй харагдуулах. */
+.container > .item-grid .item-card {
+  height: 100%;
+  min-height: 25.1rem;
+}
+
+.container > .item-grid .item-card__media {
+  aspect-ratio: auto;
+  height: 10.2rem;
+  flex: 0 0 10.2rem;
+  overflow: hidden;
+}
+
+.container > .item-grid .item-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.container > .item-grid .item-card__body {
+  min-height: 14.7rem;
+}
+
+.container > .item-grid .item-card__header {
+  min-height: 2.6rem;
+}
+
+.container > .item-grid .item-card__title {
+  min-height: 2.55rem;
+}
+
+.container > .item-grid .item-card__text {
+  min-height: 2.55rem;
+  max-height: 2.55rem;
+}
+
+.container > .item-grid .meta-list {
+  min-height: 2.4rem;
+}
+
+.container > .item-grid .card-actions {
+  margin-top: auto;
+}
+
+@media (max-width: 540px) {
+  .container > .item-grid .item-card,
+  .container > .item-grid .item-card__body,
+  .container > .item-grid .item-card__header,
+  .container > .item-grid .item-card__title,
+  .container > .item-grid .item-card__text,
+  .container > .item-grid .meta-list {
+    min-height: 0;
+  }
+
+  .container > .item-grid .item-card__media {
+    height: auto;
+    flex-basis: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .container > .item-grid .item-card__text {
+    max-height: none;
+  }
+}
+
+.item-card__badges {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+.resolved-badge,
+.active-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1.45rem;
+  padding: 0.28rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.resolved-badge {
+  background: #eef2ff;
+  color: #4f46e5;
+}
+
+.active-badge {
+  background: #ecfdf5;
+  color: #059669;
+}
+
+.item-card--resolved {
+  opacity: 0.9;
+}
+
+.btn-disabled {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.68rem 0.95rem;
+  border-radius: 999px;
+  background: #f3f4f6;
+  color: #6b7280;
+  font-weight: 700;
+}
+/* AUTH PAGE Login болон register layout */
+.auth-layout {
+  display: grid;
+  grid-template-columns: 1.08fr 0.82fr;
+  gap: 2.4rem;
+  align-items: center;
+}
+
+/* ЗҮҮН ТАЛ NUM image panel */
+.auth-left {
+  position: relative;
+  min-height: 39rem;
+  overflow: hidden;
+}
+
+.auth-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.auth-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(79, 124, 243, 0.62);
+}
+
+.auth-left-text {
+  position: absolute;
+  left: 2.2rem;
+  right: 1.8rem;
+  bottom: 2.1rem;
+  color: var(--color-white-0);
+}
+
+.auth-left-text h2 {
+  font-size: 1.95rem;
+  line-height: 1.15;
+  margin-bottom: 0.7rem;
+  font-weight: 700;
+}
+
+.auth-left-text p {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* БАРУУН ТАЛ Auth card */
+.auth-card {
+  width: 100%;
+  max-width: 24.5rem;
+  justify-self: center;
+  background: var(--color-white-0);
+  border: 1px solid var(--color-line);
+  border-radius: 1.05rem;
+  box-shadow: 0 0.7rem 2rem rgba(0, 0, 0, 0.09);
+  overflow: hidden;
+}
+
+.auth-card-inner {
+  padding: 1.65rem 1.45rem 1.25rem;
+}
+
+.auth-card h1 {
+  text-align: center;
+  font-size: 1.65rem;
+  color: var(--color-black-1);
+  margin-bottom: 0.45rem;
+  font-weight: 700;
+}
+
+.auth-subtitle {
+  text-align: center;
+  color: var(--color-black-3);
+  font-size: 0.9rem;
+  line-height: 1.45;
+  margin-bottom: 1.35rem;
+}
+
+/* FORM Auth form */
+.auth-form {
+  display: grid;
+  gap: 0.95rem;
+}
+
+.form-group {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--color-black-1);
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.form-link {
+  font-size: 0.8rem;
+  color: var(--color-blue-1);
+  font-weight: 600;
+}
+
+.auth-form input {
+  height: 2.75rem;
+  padding: 0 0.9rem;
+  border-radius: 0.72rem;
+  font-size: 0.88rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auth-form input:focus {
+  box-shadow: 0 0 0 3px var(--color-blue-3);
+}
+
+.auth-submit {
+  width: 100%;
+  height: 2.8rem;
+  margin-top: 0.25rem;
+  border-radius: 0.72rem;
+  background-color: var(--color-blue-1);
+  color: var(--color-white-0);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.auth-card-footer {
+  padding: 0.95rem 1.2rem;
+  border-top: 1px solid var(--color-line);
+  text-align: center;
+  background: var(--color-white-1);
+  font-size: 0.84rem;
+  color: var(--color-black-3);
+}
+
+.auth-card-footer a {
+  color: var(--color-blue-1);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .auth-page {
+    width: min(100% - 2rem, 28rem);
+    padding-bottom: 5rem;
+  }
+
+  .auth-layout {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .auth-left {
+    display: none;
+  }
+
+  .auth-card {
+    max-width: none;
+  }
+
+  .auth-card-inner {
+    padding: 1.25rem 1rem 1.05rem;
+  }
+
+  .auth-card h1 {
+    font-size: 1.45rem;
+  }
+
+  .auth-subtitle {
+    font-size: 0.84rem;
+    margin-bottom: 1.1rem;
+  }
+
+  .form-group label,
+  .form-link {
+    font-size: 0.8rem;
+  }
+
+  .auth-form input,
+  .auth-submit {
+    height: 2.7rem;
+    font-size: 0.86rem;
+  }
+
+  .auth-card-footer {
+    padding: 0.9rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+.form-message {
+  min-height: 1.2rem;
+  margin: 0;
+  color: #166534;
+  font-size: 0.9rem;
+}
+
+.form-message.is-error {
+  color: #b91c1c;
+}

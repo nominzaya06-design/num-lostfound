@@ -1,0 +1,957 @@
+.SearchType {
+  display: flex;
+  flex: 1;
+  min-width: 150px;
+  flex-direction: column;
+}
+
+.Main-body {
+  width: min(90%, 1200px);
+  margin: var(--space-4) auto 0;
+}
+
+.AdvancedFilters {
+  padding: var(--space-4);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-2);
+  background-color: var(--color-white-0);
+}
+
+.AdvancedFilterTitle {
+  margin-bottom: var(--space-3);
+}
+
+.AdvancedFilterTitle label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-black-1);
+}
+
+.AdvancedFilterHeader {
+  margin-bottom: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-black-2);
+}
+
+#filterToggle {
+  display: none;
+}
+
+#filtherImg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.AdvencedSearchOptions {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.FilterButton {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-1);
+  background-color: var(--color-white-1);
+  color: var(--color-black-2);
+  font-size: 0.78rem;
+  box-shadow: none;
+}
+
+.FilterButton:focus {
+  outline: none;
+  border-color: var(--color-blue-1);
+  box-shadow: none;
+}
+
+.footer {
+  margin-top: var(--space-6);
+  padding: var(--space-5) var(--space-4);
+  border-top: 1px solid var(--color-line);
+  background-color: var(--color-white-0);
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-5);
+  width: min(90%, 1200px);
+  margin: 0 auto;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-column h3 {
+  margin-bottom: var(--space-2);
+  font-size: 1rem;
+  color: var(--color-blue-2);
+}
+
+.footer-column p,
+.footer-bottom {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--color-black-3);
+}
+
+.footer-bottom {
+  width: min(90%, 1200px);
+  margin: var(--space-4) auto 0;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-line);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .AdvencedSearchOptions {
+    flex-wrap: wrap;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .footer-column,
+  .footer-bottom {
+    text-align: center;
+  }
+
+}
+
+.SearchType--action {
+  justify-content: flex-end;
+}
+
+.apply-filter-btn {
+  width: 100%;
+  min-height: 2.45rem;
+}
+/* PAGE LAYOUT Lost / Found хуудасны үндсэн бүтэц */
+.site-main {
+  position: relative;
+}
+
+.page-split {
+  display: grid;
+  grid-template-columns: 16rem minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+}
+
+/* CARD PADDING Sidebar, detail, form card */
+.sidebar-card,
+.contact-card,
+.form-card,
+.modal-card {
+  padding: 1rem;
+}
+
+/* SECTION TITLE Icon-той гарчгууд */
+.sidebar-card__title,
+.contact-card__heading,
+.back-link,
+.notice,
+.meta-list div,
+.detail-meta__item,
+.detail-note,
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.sidebar-card__title {
+  margin-bottom: 0.9rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.sidebar-card__title svg,
+.notice svg,
+.contact-card__heading svg,
+.back-link svg,
+.meta-list svg,
+.detail-meta__item svg,
+.detail-note svg,
+.contact-card__actions svg,
+.contact-row svg {
+  width: 1rem;
+  height: 1rem;
+  flex: none;
+  stroke: currentColor;
+}
+
+/* FORM STACK Form доторх босоо бүтэц */
+.sidebar-stack,
+.form-stack,
+.modal-stack {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.field-group label,
+.checkbox-group__title,
+.form-group label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-black-2);
+}
+
+.checkbox-group {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.82rem;
+  color: var(--color-black-2);
+}
+
+.checkbox-item input {
+  width: 0.95rem;
+  height: 0.95rem;
+  padding: 0;
+}
+
+/* NOTICE Message box */
+.notice {
+  padding: 0.9rem 1rem;
+  border-left: 0.22rem solid currentColor;
+  border-radius: var(--radius-2);
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+.notice strong {
+  display: block;
+  margin-bottom: 0.1rem;
+  font-size: 0.92rem;
+}
+
+.notice--lost {
+  color: #e65c52;
+  background-color: #fff1ef;
+}
+
+.notice--found {
+  color: #41b06e;
+  background-color: #edf8f1;
+}
+
+/* PAGE HEADER Хуудасны title хэсэг */
+.list-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.9rem;
+  margin: 1rem 0 0.9rem;
+}
+
+.list-heading h1,
+.detail-title,
+.form-page h1,
+.modal-title {
+  font-size: 1.45rem;
+  line-height: 1.15;
+}
+
+.list-heading span,
+.muted-count,
+.form-page > p,
+.back-link,
+.contact-card__eyebrow,
+.modal-subtitle {
+  color: var(--color-black-3);
+}
+
+.list-heading span,
+.muted-count,
+.form-page > p,
+.modal-subtitle {
+  font-size: 0.84rem;
+}
+
+/* ITEM GRID Lost / Found card list */
+.item-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.item-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 30.5rem;
+  overflow: hidden;
+}
+
+.item-card__media {
+  aspect-ratio: 4 / 3.1;
+  background-color: var(--color-white-2);
+}
+
+.item-card__media img,
+.detail-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding: 0.9rem;
+}
+
+.item-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.65rem;
+}
+
+.item-card__title {
+  font-size: 0.98rem;
+  line-height: 1.28;
+}
+
+.item-card__text,
+.meta-list,
+.detail-copy p,
+.modal-copy {
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.45;
+  color: var(--color-black-3);
+}
+
+.item-card__text {
+  display: -webkit-box;
+  min-height: 3.84rem;
+  overflow: hidden;
+  font-size: 0.88rem;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.meta-list {
+  display: grid;
+  gap: 0.35rem;
+  min-height: 2.35rem;
+  font-size: 0.8rem;
+}
+
+.card-actions,
+.contact-card__actions,
+.form-grid,
+.modal-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+
+.card-actions {
+  margin-top: auto;
+}
+
+.card-actions .btn-soft,
+.card-actions .btn-outline,
+.contact-card__actions .btn-solid,
+.contact-card__actions .btn-soft {
+  min-width: 0;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* DETAILS PAGE Дэлгэрэнгүй хуудасны layout */
+.back-link {
+  display: inline-flex;
+  margin-bottom: 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.detail-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(17rem, 0.92fr);
+  gap: 1.3rem;
+  align-items: start;
+}
+
+.detail-media {
+  overflow: hidden;
+}
+
+.detail-panel,
+.detail-head,
+.detail-copy,
+.contact-card {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.detail-subline {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.detail-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-2);
+  background-color: var(--color-white-0);
+}
+
+.detail-copy h2,
+.contact-card__heading h2,
+.form-stack h2,
+.modal-title {
+  margin: 0;
+  font-size: 0.96rem;
+  line-height: 1.25;
+}
+
+.detail-copy p {
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.detail-meta__item,
+.contact-card > p:not(.contact-card__eyebrow) {
+  font-size: 0.88rem;
+  color: var(--color-black-2);
+}
+
+.contact-card__eyebrow {
+  margin: 0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.detail-note {
+  padding: 0.8rem 0.9rem;
+  border-radius: var(--radius-1);
+  background-color: var(--color-blue-3);
+  color: var(--color-blue-2);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.contact-card__actions .btn-solid,
+.contact-card__actions .btn-soft {
+  min-height: 2.45rem;
+  font-size: 0.8rem;
+}
+
+/* CONTACT PAGE Тусдаа contact card */
+.contact-page {
+  display: grid;
+  place-items: center;
+  min-height: calc(100vh - 12rem);
+}
+
+.modal-card {
+  width: min(100%, 23rem);
+}
+
+.modal-header {
+  display: grid;
+  gap: 0.35rem;
+  margin-bottom: 0.9rem;
+}
+
+.contact-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.contact-row {
+  align-items: flex-start;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-1);
+  background-color: var(--color-white-1);
+}
+
+.contact-row strong {
+  min-width: 4.2rem;
+  font-size: 0.78rem;
+  color: var(--color-black-2);
+}
+
+.contact-row span {
+  font-size: 0.88rem;
+  line-height: 1.4;
+  color: var(--color-black-1);
+  word-break: break-word;
+}
+
+/* REPORT PAGE Toggle form */
+.form-page {
+  width: min(90%, 34rem);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.form-page > p {
+  margin-top: 0.45rem;
+}
+
+.report-controller {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.form-card {
+  margin-top: 1.4rem;
+  text-align: left;
+}
+
+.report-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.2rem;
+  padding: 0.25rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-2);
+  background-color: var(--color-white-2);
+}
+
+.report-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.7rem;
+  border-radius: calc(var(--radius-2) - 0.2rem);
+  color: var(--color-black-3);
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+#report-lost:checked ~ .form-card .report-tab[for="report-lost"],
+#report-found:checked ~ .form-card .report-tab[for="report-found"] {
+  background-color: var(--color-white-0);
+  box-shadow: 0 0.35rem 1rem var(--color-shadow);
+}
+
+#report-lost:checked ~ .form-card .report-tab[for="report-lost"] {
+  color: #e65c52;
+}
+
+#report-found:checked ~ .form-card .report-tab[for="report-found"] {
+  color: #41b06e;
+}
+
+.form-panel {
+  display: none;
+  margin-top: 1.2rem;
+}
+
+#report-lost:checked ~ .form-card .form-panel--lost,
+#report-found:checked ~ .form-card .form-panel--found {
+  display: block;
+}
+
+.upload-box {
+  display: grid;
+  place-items: center;
+  gap: 0.4rem;
+  min-height: 8.8rem;
+  padding: 1rem;
+  border: 2px dashed var(--color-line);
+  border-radius: var(--radius-2);
+  color: var(--color-black-3);
+  text-align: center;
+}
+
+.upload-box strong {
+  font-size: 0.92rem;
+  color: var(--color-black-1);
+}
+
+.upload-box p {
+  margin: 0;
+  font-size: 0.78rem;
+}
+
+.upload-box svg {
+  width: 1.7rem;
+  height: 1.7rem;
+  stroke: currentColor;
+}
+
+.form-submit {
+  width: 100%;
+  min-height: 2.8rem;
+  border-radius: var(--radius-1);
+  color: var(--color-white-0);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.form-submit--lost {
+  background-color: #e65c52;
+}
+
+.form-submit--found {
+  background-color: #5cbc87;
+}
+
+@media (max-width: 980px) {
+  .page-split,
+  .detail-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .item-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .site-main {
+    width: min(92%, 40rem);
+  }
+
+  .list-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .detail-meta {
+    display: grid;
+    gap: 0.55rem;
+  }
+
+  .item-grid,
+  .contact-card__actions,
+  .card-actions,
+  .form-grid,
+  .modal-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .form-card,
+  .sidebar-card,
+  .contact-card,
+  .modal-card {
+    padding: 0.95rem;
+  }
+
+  .list-heading h1,
+  .detail-title,
+  .form-page h1,
+  .modal-title {
+    font-size: 1.25rem;
+  }
+
+  .detail-copy p,
+  .contact-card > p:not(.contact-card__eyebrow),
+  .contact-row span,
+  .modal-copy {
+    font-size: 0.84rem;
+  }
+}
+
+
+.list-heading--found > div > span {
+  color: #5f8f72;
+}
+
+/* CONTACT MODAL Details page дээр background харагдаж байх contact dialog */
+.contact-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(2px);
+}
+
+.contact-modal {
+  position: relative;
+  width: min(100%, 30rem);
+  max-height: min(90vh, 38rem);
+  padding: 1.4rem;
+  overflow: auto;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 1.15rem;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 1.35rem 3.2rem rgba(15, 23, 42, 0.24);
+}
+
+.contact-modal__close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  display: inline-grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background: var(--color-white-1);
+  color: var(--color-black-2);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.contact-modal .modal-header {
+  display: grid;
+  gap: 0.45rem;
+  padding-right: 2.4rem;
+  margin-bottom: 1.05rem;
+}
+
+.contact-modal .modal-title {
+  font-size: 1.18rem;
+  line-height: 1.2;
+}
+
+.contact-modal .modal-copy {
+  margin: 0;
+}
+
+.contact-list--modal {
+  display: grid;
+  gap: 0.7rem;
+  margin: 1rem 0;
+}
+
+.contact-modal .contact-row {
+  display: grid;
+  grid-template-columns: 5.6rem minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-1);
+  background-color: var(--color-white-1);
+}
+
+.contact-modal .contact-row strong {
+  min-width: 0;
+  font-size: 0.78rem;
+}
+
+.contact-modal .contact-row span,
+.contact-modal .contact-row a {
+  font-size: 0.88rem;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.contact-modal__note {
+  margin-top: 0.95rem;
+}
+
+.contact-modal__actions {
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .contact-modal {
+    padding: 1.05rem;
+  }
+
+  .contact-modal .contact-row {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+}
+
+
+/* REPORT PAGE MOBILE: утсан дээр form-ыг бусад хуудас шиг бүтэн өргөн харагдуулах */
+.upload-box--selected {
+  border-color: var(--color-blue-1);
+  background: var(--color-blue-3);
+  color: var(--color-blue-2);
+}
+
+.upload-box--error {
+  border-color: #ef4444;
+  background: #fff0f0;
+  color: #ef4444;
+}
+
+@media (max-width: 768px) {
+  .form-page {
+    width: 100%;
+  }
+
+  .form-card {
+    width: 100%;
+  }
+
+  .report-tabs {
+    gap: 0.35rem;
+  }
+
+  .report-tab {
+    min-height: 2.55rem;
+    padding-inline: 0.35rem;
+    font-size: 0.78rem;
+  }
+
+  .upload-box {
+    min-height: 7.5rem;
+  }
+}
+
+/* CONTACT MODAL ANIMATION: бусад surface/card transition-тэй адил зөөлөн гарч ирэх */
+.contact-modal-overlay {
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+.contact-modal-overlay.is-visible {
+  opacity: 1;
+}
+
+.contact-modal {
+  transform: translateY(0.85rem) scale(0.98);
+  opacity: 0;
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.contact-modal-overlay.is-visible .contact-modal {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* CARD CONSISTENCY: гарчиг/тайлбар/meta/actions бүх card дээр нэг ижил өндөртэй харагдах */
+.item-card__title {
+  display: -webkit-box;
+  min-height: 2.55rem;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.item-card__header num-status-badge {
+  margin-top: 0.08rem;
+}
+
+.item-card__body .card-actions {
+  align-items: end;
+}
+
+@media (max-width: 768px) {
+  .item-card {
+    min-height: auto;
+  }
+
+  .item-card__title {
+    min-height: auto;
+  }
+}
+
+.claim-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-row input,
+.claim-message-label textarea {
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.8rem;
+  padding: 0.7rem 0.85rem;
+  font: inherit;
+  color: #111827;
+  background: #fff;
+}
+
+.claim-message-label {
+  display: grid;
+  gap: 0.45rem;
+  color: #374151;
+  font-weight: 700;
+}
+
+.claim-message-label textarea {
+  resize: vertical;
+  min-height: 7rem;
+}
+
+
+/* Report page: keep the form centered and prevent horizontal overflow on mobile. */
+.form-page {
+  width: min(94vw, 42rem);
+  max-width: 100%;
+  margin-inline: auto;
+  padding-inline: 0;
+  overflow-x: hidden;
+}
+
+.form-card,
+.form-stack,
+.form-group,
+.form-grid,
+.form-panel {
+  max-width: 100%;
+  min-width: 0;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea,
+.form-submit,
+.upload-box {
+  width: 100%;
+  max-width: 100%;
+}
+
+.form-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 768px) {
+  .site-main {
+    width: min(94vw, 40rem);
+    margin-inline: auto;
+    overflow-x: hidden;
+  }
+
+  .form-page {
+    width: 100%;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-card {
+    padding: 0.9rem;
+  }
+}

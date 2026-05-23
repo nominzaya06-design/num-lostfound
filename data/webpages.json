@@ -1,0 +1,57 @@
+[
+  {
+    "item": "Home Items",
+    "lnk": "#/",
+    "component": "homepage",
+    "showInNav": true
+  },
+  {
+    "item": "Lost Items",
+    "lnk": "#/lost",
+    "component": "lost",
+    "showInNav": true
+  },
+  {
+    "item": "Found Items",
+    "lnk": "#/found",
+    "component": "found",
+    "showInNav": true
+  },
+  {
+    "item": "Report",
+    "lnk": "#/report",
+    "component": "report",
+    "showInNav": false
+  },
+  {
+    "item": "Login",
+    "lnk": "#/login",
+    "component": "login",
+    "showInNav": false
+  },
+  {
+    "item": "Register",
+    "lnk": "#/register",
+    "component": "register",
+    "showInNav": false
+  },
+  {
+    "item": "Profile",
+    "lnk": "#/profile",
+    "component": "profile",
+    "showInNav": false
+  },
+  {
+    "item": "Admin",
+    "lnk": "#/admin",
+    "component": "admin",
+    "showInNav": false
+  },
+  {
+    "item": "Details",
+    "lnk": "#/details",
+    "base": "/details",
+    "component": "details",
+    "showInNav": false
+  }
+]

@@ -1,0 +1,691 @@
+/* PROFILE PAGE Хувийн мэдээлэл ба report хэсэг */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(1rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.profile-layout {
+  display: grid;
+  grid-template-columns: 20rem minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+/* ЗҮҮН CARD Хэрэглэгчийн мэдээлэл */
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 2rem 1.5rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-2);
+  background: var(--color-white-0);
+  box-shadow: 0 0.45rem 1.25rem var(--color-shadow);
+  animation: fadeUp 0.4s ease both;
+}
+
+.profile-avatar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: var(--color-blue-3);
+  color: var(--color-blue-2);
+  font-size: 1.6rem;
+  font-weight: 700;
+  box-shadow: 0 0 0 2px var(--color-line);
+}
+
+.profile-avatar::after {
+  content: "";
+  position: absolute;
+  right: 0.2rem;
+  bottom: 0.2rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  border: 2px solid var(--color-white-0);
+  border-radius: 50%;
+  background: hsl(142, 71%, 45%);
+}
+
+.profile-name {
+  font-size: 1.1rem;
+}
+
+.profile-badge,
+.reports-count {
+  border-radius: var(--radius-3);
+  font-weight: 700;
+}
+
+.profile-badge {
+  padding: 0.3rem 0.7rem;
+  background: var(--color-blue-3);
+  color: var(--color-blue-2);
+  font-size: 0.72rem;
+}
+
+.profile-info {
+  width: 100%;
+  display: grid;
+  gap: 0.7rem;
+  padding: 0.95rem 1.05rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-1);
+  background: var(--color-white-1);
+}
+
+.info-row dt {
+  margin-bottom: 0.15rem;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-black-3);
+}
+
+.info-row dd {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+/* ACTIONS Admin болон report товч */
+.profile-actions {
+  width: 100%;
+  display: grid;
+  gap: var(--space-2);
+}
+
+.profile-secondary,
+.reports-header {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.profile-secondary > a {
+  flex: 1;
+}
+
+.btn-admin,
+.btn-settings,
+.btn-new-report {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.6rem;
+  padding: 0 0.9rem;
+  border-radius: var(--radius-1);
+  font-size: 0.78rem;
+  font-weight: 700;
+  transition: var(--transition);
+}
+
+.btn-admin,
+.btn-new-report {
+  background: var(--color-blue-1);
+  color: var(--color-white-0);
+}
+
+.btn-admin:hover,
+.btn-new-report:hover {
+  background: var(--color-blue-2);
+}
+
+.btn-settings {
+  border: 1px solid var(--color-line);
+  color: var(--color-black-2);
+  background: transparent;
+}
+
+.btn-settings:hover {
+  background: var(--color-white-1);
+}
+
+
+/* БАРУУН ХЭСЭГ Хэрэглэгчийн report list */
+.reports-section {
+  animation: fadeUp 0.4s 0.1s ease both;
+}
+
+.reports-header {
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+}
+
+.reports-header h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.reports-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.4rem;
+  height: 1.4rem;
+  background: var(--color-blue-3);
+  color: var(--color-blue-2);
+  font-size: 0.72rem;
+}
+
+
+@media (max-width: 768px) {
+  .profile-page {
+    width: 92%;
+    margin-bottom: 5rem;
+  }
+
+  .profile-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .reports-header {
+    flex-wrap: wrap;
+  }
+}
+
+/* PROFILE REPORT GRID: item-grid-тэй ижил card design ашиглана */
+.reports-grid {
+  margin-top: 0;
+}
+
+.profile-report {
+  width: 100%;
+}
+
+.profile-card-actions .btn-delete-report {
+  border: 1px solid #f3c3c3;
+  background: #fff0f0;
+  color: #ef4444;
+  cursor: pointer;
+}
+
+.profile-card-actions .btn-delete-report:hover {
+  background: #fee2e2;
+}
+
+.profile-card-actions .btn-delete-report:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+
+.login-required-card {
+  max-width: 36rem;
+  margin: 4rem auto;
+  padding: 2rem;
+  border-radius: 1.5rem;
+}
+
+.login-required-card h1 {
+  margin: 0 0 0.7rem;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+.reports-header--secondary {
+  margin-top: 2rem;
+}
+
+.profile-logout {
+  width: 100%;
+}
+
+.claim-request-list {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.profile-claim-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 1.1rem;
+}
+
+.profile-claim-card p {
+  margin: 0.25rem 0;
+  color: #4b5563;
+}
+
+.profile-claim-card span {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.profile-claim-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+/* ADMIN PAGE Shared style-тэй нийцсэн admin layout */
+.admin-shell {
+  display: grid;
+  grid-template-columns: 16rem minmax(0, 1fr);
+  gap: 1.25rem;
+}
+
+/* SIDEBAR Admin цэс */
+.admin-sidebar {
+  padding: 1rem;
+  background: var(--color-white-0);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-2);
+  box-shadow: 0 0.45rem 1.25rem var(--color-shadow);
+}
+
+.admin-sidebar h1 {
+  margin-bottom: 0.9rem;
+  font-size: 1rem;
+  color: var(--color-blue-2);
+}
+
+.admin-nav {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.admin-tab,
+.admin-back-link {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 2.6rem;
+  padding: 0 0.85rem;
+  border-radius: var(--radius-1);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-black-2);
+  background: var(--color-white-1);
+  transition: var(--transition);
+}
+
+.admin-tab:hover,
+.admin-back-link:hover,
+.admin-tab.is-active {
+  background: var(--color-blue-3);
+  color: var(--color-blue-2);
+}
+
+.admin-back-link {
+  margin-top: 0.45rem;
+}
+
+/* CONTENT Admin үндсэн хэсэг */
+.admin-main {
+  display: grid;
+  gap: 1rem;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.admin-header h2 {
+  font-size: 1.5rem;
+}
+
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.admin-stat,
+.admin-card {
+  padding: 1rem;
+  background: var(--color-white-0);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-2);
+  box-shadow: 0 0.45rem 1.25rem var(--color-shadow);
+}
+
+.admin-stat small,
+.admin-muted {
+  color: var(--color-black-3);
+}
+
+.admin-stat strong {
+  display: block;
+  margin-top: 0.45rem;
+  font-size: 1.8rem;
+}
+
+.admin-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.admin-card-head h3 {
+  font-size: 1rem;
+}
+
+.admin-search {
+  max-width: 15rem;
+}
+
+/* TABLE Admin list */
+.admin-table-wrap {
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 0.9rem 0.75rem;
+  border-bottom: 1px solid var(--color-line);
+  text-align: left;
+  font-size: 0.84rem;
+}
+
+.admin-table th {
+  color: var(--color-black-3);
+  font-weight: 700;
+}
+
+.admin-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.admin-item img {
+  width: 2.75rem;
+  height: 2.75rem;
+  object-fit: cover;
+  border-radius: 0.7rem;
+}
+
+.admin-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.admin-action {
+  min-width: 2.3rem;
+  min-height: 2.3rem;
+  border-radius: var(--radius-1);
+  border: 1px solid var(--color-line);
+  background: var(--color-white-1);
+  color: var(--color-black-2);
+}
+
+.admin-action--approve {
+  color: #41b06e;
+}
+
+.admin-action--delete {
+  color: #e65c52;
+}
+
+.admin-placeholder {
+  padding: 2.4rem 1rem;
+  text-align: center;
+  color: var(--color-black-3);
+}
+
+/* TAB VISIBILITY JS-гүйгээр class солиход бэлэн */
+.admin-panel {
+  display: none;
+}
+
+.admin-panel.is-active {
+  display: block;
+}
+
+@media (max-width: 960px) {
+  .admin-shell,
+  .admin-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-page {
+    width: min(92%, 40rem);
+  }
+
+  .admin-header,
+  .admin-card-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin-search {
+    max-width: none;
+    width: 100%;
+  }
+}
+
+.admin-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.admin-sidebar__text,
+.admin-eyebrow,
+.admin-card-head p {
+  color: var(--color-black-3);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.admin-eyebrow {
+  margin-bottom: 0.2rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-blue-2);
+}
+
+.admin-demo-users {
+  display: grid;
+  gap: 0.5rem;
+  max-width: 30rem;
+  margin: 1rem auto 0;
+  text-align: left;
+}
+
+/* REACT HOOKS WIDGET: Admin dashboard дээрх тусгаарласан React хэсэг */
+.react-widget {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-2);
+  background: var(--color-white-0);
+  box-shadow: 0 0.45rem 1.25rem var(--color-shadow);
+}
+
+.react-widget__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.react-widget__eyebrow {
+  margin-bottom: 0.2rem;
+  color: var(--color-blue-2);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.react-widget__pill {
+  flex: none;
+  padding: 0.32rem 0.65rem;
+  border-radius: 999px;
+  background: var(--color-blue-3);
+  color: var(--color-blue-2);
+  font-size: 0.68rem;
+  font-weight: 800;
+}
+
+.react-widget__stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.react-widget__stat {
+  padding: 0.8rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-1);
+  background: var(--color-white-1);
+}
+
+.react-widget__stat strong {
+  display: block;
+  font-size: 1.45rem;
+  color: var(--color-black-1);
+}
+
+.react-widget__stat span,
+.react-widget__list span {
+  color: var(--color-black-3);
+  font-size: 0.78rem;
+}
+
+.react-widget__controls {
+  display: grid;
+  grid-template-columns: repeat(3, max-content) minmax(12rem, 1fr);
+  gap: 0.5rem;
+}
+
+.react-widget__controls button,
+.react-widget__controls input {
+  min-height: 2.4rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-1);
+  background: var(--color-white-1);
+}
+
+.react-widget__controls button {
+  padding: 0 0.8rem;
+  font-weight: 800;
+  color: var(--color-black-2);
+}
+
+.react-widget__controls button.is-active {
+  border-color: var(--color-blue-1);
+  background: var(--color-blue-3);
+  color: var(--color-blue-2);
+}
+
+.react-widget__list {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.react-widget__list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-1);
+  background: var(--color-white-1);
+}
+
+.react-widget__empty {
+  justify-content: center !important;
+  color: var(--color-black-3);
+}
+
+.react-widget--fallback {
+  color: var(--color-black-3);
+}
+
+@media (max-width: 768px) {
+  .react-widget__header,
+  .react-widget__list li {
+    flex-direction: column;
+  }
+
+  .react-widget__stats,
+  .react-widget__controls {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .react-widget__controls input {
+    grid-column: 1 / -1;
+  }
+}
+
+
+
+/* Sign-in required cards: more breathing room and balanced mobile layout. */
+.login-required-card {
+  width: min(92vw, 34rem);
+  margin: 4.5rem auto;
+  padding: clamp(1.3rem, 4vw, 2.2rem);
+  text-align: center;
+}
+
+.login-required-card p {
+  max-width: 28rem;
+  margin: 0.35rem auto 1.2rem;
+  line-height: 1.6;
+  color: var(--color-black-3);
+}
+
+.login-required-card .card-actions {
+  justify-content: center;
+}
+
+/* Admin: users panel removed; keep tabs simple and equal. */
+.admin-nav {
+  grid-template-columns: 1fr;
+}
+
+/* React Admin widget controls: equal-sized status buttons. */
+.react-widget__controls {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(5.8rem, 1fr));
+  gap: 0.5rem;
+}
+
+.react-widget__controls button {
+  width: 100%;
+  min-width: 0;
+  padding-inline: 0.5rem;
+  text-align: center;
+}
+
+.react-widget__controls input {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+@media (max-width: 720px) {
+  .react-widget__controls {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .react-widget__controls input {
+    grid-column: 1 / -1;
+  }
+}
