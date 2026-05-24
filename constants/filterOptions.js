@@ -1,5 +1,4 @@
 // constants/filterOptions.js
-// Homepage filter болон report form хоёр нэг ижил сонголтын эх сурвалж ашиглана.
 export const LOCATION_OPTIONS = [
   'Library',
   'Cafeteria',

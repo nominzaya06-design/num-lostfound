@@ -135,12 +135,8 @@ async function initProfile() {
 }
 
 async function initReactAdminWidget() {
-  try {
-    const { mountAdminStatsWidget } = await import('./assets/react-admin-widget.js');
-    mountAdminStatsWidget();
-  } catch (error) {
-    console.warn('React admin widget was not loaded. Run npm start to build it.', error);
-  }
+  const { mountAdminStatsWidget } = await import('./components/react/adminStatsWidget.js');
+  mountAdminStatsWidget();
 }
 
 function highlightActiveNav(path) {

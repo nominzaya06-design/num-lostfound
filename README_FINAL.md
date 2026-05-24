@@ -15,10 +15,11 @@
 - React зөвхөн Admin dashboard-ийн жижиг statistics хэсэгт ашиглагдана
 
 ### React
-- Source файл: `components/react/AdminStatsWidget.jsx`
+- Source файл: `components/react/adminStatsWidget.js`
+- React болон ReactDOM нь `index.html` дээр CDN script-ээр ачаалагдана.
 - Ашигласан hooks: `useState`, `useEffect`, `useMemo`
-- Browser шууд `import { useState } from 'react'` ойлгохгүй тул `npm start` үед `esbuild` ашиглаж `assets/react-admin-widget.js` bundle үүсгэнэ.
-- Generated bundle болон `node_modules/` zip-д оруулахгүй.
+- Үндсэн сайт React биш; зөвхөн Admin dashboard-ийн жижиг widget React ашиглана.
+- `esbuild`, generated bundle, `npm run build` хэрэглэхгүй.
 
 ### Backend
 - Node.js + Express
@@ -52,7 +53,7 @@ npm install
 copy .env.example .env
 ```
 
-`.env` дотор PostgreSQL password-оо тохируулна.
+`.env` дотор PostgreSQL connection string-ээ тохируулна.
 
 ```powershell
 npm run db:setup
@@ -85,7 +86,7 @@ Admin:   admin@num.edu.mn / admin1234
 
 - Frontend model дээр `status || reportType` fallback давхардал арилгасан.
 - Backend API item response нэг хэлбэртэй болсон: `status`, `reportStatus`, `image`, `date`.
-- React Admin widget дээр copy-paste fallback арилгасан.
+- React Admin widget-г CDN-based жижиг widget болгож, bundler/generated file-ийг хассан.
 - Login/register route дээр rate limiter бодитоор холбосон.
 - `initPageScripts()` бүх event listener-ийг page бүр дээр дуудахгүй, route бүрийн хэрэгтэй listener-ийг л дуудахаар болгосон.
 - CSS-ийг 4 файл болгож цэгцэлсэн:
@@ -100,4 +101,4 @@ Admin:   admin@num.edu.mn / admin1234
 
 ## 8. Хамгаалалт дээр хэлэх богино тайлбар
 
-Үндсэн frontend нь Vanilla JavaScript SPA. Hash route ашиглаж page reload хийхгүйгээр `#app` дотор page-үүд солигддог. React-ийг бүх site дээр биш, зөвхөн Admin dashboard-ийн жижиг statistics component дээр hooks ашиглах зорилгоор хэрэглэсэн. Web Component ашиглаж Lost/Found badge-ийг `<num-status-badge>` custom tag болгосон. Backend нь Node.js + Express, database нь PostgreSQL. Authentication нь session table + HttpOnly cookie дээр ажилладаг. SQL injection-ээс хамгаалж parameterized query ашигласан, password plain text хадгалахгүй hash хэлбэрээр хадгалдаг.
+Үндсэн frontend нь Vanilla JavaScript SPA. Hash route ашиглаж page reload хийхгүйгээр `#app` дотор page-үүд солигддог. React-ийг бүх site дээр биш, зөвхөн Admin dashboard-ийн жижиг statistics widget дээр hooks ашиглах зорилгоор хэрэглэсэн. React болон ReactDOM-ийг CDN-ээр ачаалсан тул `esbuild` болон generated bundle хэрэггүй. Web Component ашиглаж Lost/Found badge-ийг `<num-status-badge>` custom tag болгосон. Backend нь Node.js + Express, database нь PostgreSQL. Authentication нь session table + HttpOnly cookie дээр ажилладаг. SQL injection-ээс хамгаалж parameterized query ашигласан, password plain text хадгалахгүй hash хэлбэрээр хадгалдаг.
